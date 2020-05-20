@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile.txt
+    image: myjenkins
+    ports:
+      - "3000:8080"
+      - "5000:5000"
+    volumes:
+      - volumenJenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DOCKER_PATH}:/usr/bin/docker:ro
+volumes:
+  volumenJenkins:
+    name: jenkins_home

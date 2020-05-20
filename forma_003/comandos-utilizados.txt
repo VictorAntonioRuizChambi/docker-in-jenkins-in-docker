@@ -1,0 +1,30 @@
+comando para levantar los servicios
+===================================
+ $ docker-compose -f Docker-compose.yml up
+
+comando de linux para visualizar los usuarios que tengo registrados
+===================================================================
+cat /etc/passwd
+
+comando de linux para visulizar los grupos que tengo registrados
+================================================================
+cat /etc/group
+
+comando para agregar un usuario jenkins en el contenedor(aplicar este comando en caso no haya uno)
+==================================================================================================
+addusser <username>
+
+comando para agregar un grupo docker en el contenedor(aplicar este comando en caso no exista el grupo)
+======================================================================================================
+addgroup GROUP
+
+comando para agregar un usuario a un grupo(aplicar este comando en caso el usuario jenkins no se encuentre asociado al grupo docker)
+====================================================================================================================================
+addgroup USER GROUP
+
+comando para dar todos los permisos al daemon de docker del contenedor(en caso se quiera que el usuario jenkins sea el que libremenete ejecute comandos docker
+de lo contrario puede usar los comandos docker con el usuario sudo por delante del comando
+==========================================================================================
+chmod 777 /var/run/docker.sock
+
+#para que pueda leer el archivo .env, debe encontrarse en el mismo directorio donde se encuentra el archivo Docker-compose.yml

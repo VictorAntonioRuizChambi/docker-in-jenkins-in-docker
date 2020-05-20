@@ -1,0 +1,32 @@
+comando para construir la imagen
+================================
+docker build -f Dockerfile.txt -t myjenkins .
+
+comando para crear el contenedor
+================================
+$ docker run -d -v /var/run/docker.sock:/var/run/docker.sock \
+                      -v $(which docker):/usr/bin/docker -p 3000:8080 myjenkins
+
+comando de linux para visualizar los usuarios que tengo registrados
+===================================================================
+cat /etc/passwd
+
+comando de linux para visulizar los grupos que tengo registrados
+================================================================
+cat /etc/group
+
+comando para agregar un usuario jenkins en el contenedor(aplicar este comando en caso no haya uno)
+==================================================================================================
+addusser <username>
+
+comando para agregar un grupo docker en el contenedor(aplicar este comando en caso no exista el grupo)
+======================================================================================================
+addgroup GROUP
+
+comando para agregar un usuario a un grupo(aplicar este comando en caso el usuario jenkins no se encuentre asociado al grupo docker)
+====================================================================================================================================
+addgroup USER GROUP
+
+comando para dar todos los permisos al daemon de docker del contenedor
+======================================================================
+chmod 777 /var/run/docker.sock
